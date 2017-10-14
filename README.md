@@ -37,6 +37,17 @@ Serverless Boilerplate - Generic boilerplate for applications using the Serverle
 
 ## Usage and command line options
 
+
+### KMS
+
+Generate a key: `aws kms create-key` and get the `keyId`.
+
+Encrypt a variable with
+
+```bash
+serverless encrypt --name foo --value bar --keyid {keyId}
+```
+
 ## Contents
 
 This boilerplate contains the following plugins:
