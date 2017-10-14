@@ -38,6 +38,15 @@ Serverless Boilerplate - Generic boilerplate for applications using the Serverle
 ## Usage and command line options
 
 
+### Jest Plugin
+
+The jest plugin seems to have several issues, such as:
+- it doesn't respect a custom template for tests,
+- when an error occurs while creating a function and test it still updates the `serverless.yml` file but does not create the function and test file,
+- running `serverless invoke test --function foo` only works when the handler defined in the function of `serverless.yml` matches the test name.
+
+
+
 ### KMS
 
 Generate a key: `aws kms create-key` and get the `keyId`.
