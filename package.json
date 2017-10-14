@@ -33,6 +33,7 @@
 		"test": "echo \"Error: no test specified\" && exit 0"
 	},
 	"devDependencies": {
+		"aws-sdk": "^2.133.0",
 		"babel-core": "^6.25.0",
 		"babel-loader": "^7.1.1",
 		"babel-plugin-transform-runtime": "^6.23.0",
@@ -43,6 +44,7 @@
 		"gulp": "^3.9.1",
 		"gulp-eslint": "^4.0.0",
 		"run-sequence": "^2.2.0",
+		"serverless-kms-secrets": "^1.0.2",
 		"serverless-offline": "^3.16.0",
 		"serverless-webpack": "^3.1.2",
 		"webpack": "^3.3.0",
