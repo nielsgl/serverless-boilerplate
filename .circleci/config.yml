@@ -84,4 +84,4 @@ jobs:
 
       - run:
           name: Send results to Coveralls.io
-          command: yarn ci:coveralls
+          command: cat $CIRCLE_ARTIFACTS/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
