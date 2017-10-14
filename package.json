@@ -32,7 +32,9 @@
 		"lint:watch": "gulp",
 		"start": "serverless offline start",
 		"test": "jest --config jest.config.json",
-		"test:coverage": "yarn test --coverage"
+		"test:coverage": "yarn test --coverage",
+		"test:coveralls": "yarn test --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+		"ci:coveralls": "yarn test:coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
 	},
 	"jest-junit": {
 		"output": "./coverage/junit.xml"
@@ -43,12 +45,14 @@
 		"babel-loader": "^7.1.1",
 		"babel-plugin-transform-runtime": "^6.23.0",
 		"babel-preset-env": "^1.6.0",
+		"coveralls": "^3.0.0",
 		"eslint": "^4.8.0",
 		"eslint-config-airbnb-base": "^12.0.2",
 		"eslint-plugin-import": "^2.7.0",
 		"gulp": "^3.9.1",
 		"gulp-eslint": "^4.0.0",
 		"jest-junit": "^3.1.0",
+		"nyc": "^11.2.1",
 		"run-sequence": "^2.2.0",
 		"serverless-jest-plugin": "^0.1.6",
 		"serverless-kms-secrets": "^1.0.2",
