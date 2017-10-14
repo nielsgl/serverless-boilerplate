@@ -29,6 +29,7 @@ Serverless Boilerplate - Generic boilerplate for applications using the Serverle
 - [Usage and command line options](#usage-and-command-line-options)
 - [Debug process](#debug-process)
 - [Todo](#todo)
+- [Notes](#notes)
 - [Credits and inspiration](#credits-and-inspiration)
 - [Contributing](#contributing)
 - [License](#license)
@@ -36,15 +37,6 @@ Serverless Boilerplate - Generic boilerplate for applications using the Serverle
 ## Installation
 
 ## Usage and command line options
-
-
-### Jest Plugin
-
-The jest plugin seems to have several issues, such as:
-- it doesn't respect a custom template for tests,
-- when an error occurs while creating a function and test it still updates the `serverless.yml` file but does not create the function and test file,
-- running `serverless invoke test --function foo` only works when the handler defined in the function of `serverless.yml` matches the test name.
-
 
 
 ### KMS
@@ -78,7 +70,6 @@ This boilerplate contains the following plugins:
 - Hooks
 - Build plugin
 - Configuration management
-- Test framework (jest)
 - DynamoDB / (Dynalite?)
 - Containerization with Docker
 - Coverage check with Coveralls / Codecov
@@ -86,9 +77,22 @@ This boilerplate contains the following plugins:
 - Shell
 - ??
 
+**In Progress**
+- Test framework (jest)
+
 **Done:**
 - ~~Gulp with watch and eslint~~
 - ~~KMS secrets~~
+
+## Notes
+
+### Jest Plugin
+
+The jest plugin seems to have several issues, such as:
+- it doesn't respect a custom template for tests,
+- when an error occurs while creating a function and test it still updates the `serverless.yml` file but does not create the function and test file,
+- running `serverless invoke test --function foo` only works when the handler defined in the function of `serverless.yml` matches the test name.
+
 
 ## Credits and inspiration
 
