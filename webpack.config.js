@@ -1,5 +1,5 @@
 const path = require('path');
-// eslint-disable-next-line import/no-unresolved
+// es-lint-disable-next-line import/no-unresolved
 const slsw = require('serverless-webpack');
 const nodeExternals = require('webpack-node-externals');
 
