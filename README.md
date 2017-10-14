@@ -56,7 +56,7 @@ This boilerplate contains the following plugins:
 - [Serverless Offline Plugin](https://github.com/dherault/serverless-offline): Emulates AWS λ and API Gateway on your local machine to speed up your development cycles
 - [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack): A Serverless v1.x plugin to build your lambda functions with Webpack.
 - [Serverless KMS Secrets](https://github.com/SC5/serverless-kms-secrets): A Serverless Plugin which helps with encrypting service secrets using the AWS Key Management Service (KMS).
-<!-- - plugin [serverless-mocha-plugin](https://github.com/SC5/serverless-mocha-plugin): enable test driven development using mocha, creation of functions from command line -->
+- [Serverless Jest Plugin](https://github.com/SC5/serverless-jest-plugin): plugin to enable test driven development using jest, and adding functionality to create functions and tests from command line
 - file `serverless.yml.json`: Register plugins above
 - file `webpack.config.js`: Settings for webpack-plugin
 - file `templates/function.ejs`: Template to use for new functions
