@@ -7,15 +7,38 @@ provider:
   region: us-west-2
   stage: dev
   cfLogs: true
+  environment:
+    MY_KMS_SECRET: ${self:custom.kmsSecrets.secrets.foo}
+
+  iamRoleStatements:
+  - Effect: Allow
+    Action:
+      - KMS:Decrypt
+    Resource: ${self:custom.kmsSecrets.keyArn}
+
 
 plugins:
+  - serverless-kms-secrets
   - serverless-webpack
   - serverless-offline
 
+
 custom:
   webpackIncludeModules: true
+  serverless-kms-secrets:
+    keyId: '123abc'
+  #   secretsFile: kms-secrets.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml # (optional)
+  # kmsSecrets: ${file(kms-secrets.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml)}
+
 
 functions:
+  health:
+    handler: handler.health
+    events:
+      - http:
+          method: get
+          path: health
+
   hello:
     handler: handler.hello
     events:
@@ -23,9 +46,9 @@ functions:
           method: get
           path: hello
 
-  health:
-    handler: handler.health
+  kms:
+    handler: handler.kms
     events:
       - http:
           method: get
-          path: health
+          path: kms
