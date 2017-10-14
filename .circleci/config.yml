@@ -14,6 +14,10 @@ jobs:
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
+    environment:
+      COVERALLS_REPO_TOKEN: $COVERALLS_REPO_TOKEN
+      COVERALLS_SERVICE_JOB_ID: "${CIRCLE_BUILD_NUM}"
+      COVERALLS_SERVICE_NAME: CircleCI
 
     working_directory: ~/app
 
@@ -77,3 +81,7 @@ jobs:
       - run:
           name: Upload coverage to Code Climate
           command: ./cc-test-reporter upload-coverage
+
+      - run:
+          name: Send results to Coveralls.io
+          command: yarn ci:coveralls
