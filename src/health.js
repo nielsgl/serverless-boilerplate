@@ -10,8 +10,8 @@ const health = async (event, context, cb) => {
 		}),
 	};
 	p
-	.then(() => cb(null, response))
-	.catch(e => cb(e));
+		.then(() => cb(null, response))
+		.catch(e => cb(e));
 };
 
 export default health;
