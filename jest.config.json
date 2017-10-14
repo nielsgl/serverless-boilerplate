@@ -1,0 +1,20 @@
+{
+	"collectCoverageFrom": [
+		"**/lib/**",
+		"**/src/**",
+		"!**/src/*.example.*"
+	],
+	"coveragePathIgnorePatterns": [
+		"<rootDir>/node_modules/",
+		"<rootDir>/templates/"
+	],
+	"coverageReporters": ["json", "lcov", "text", "html"],
+	"notify": true,
+	"testEnvironment": "node",
+	"testPathIgnorePatterns": [
+		"/config/",
+		"/node_modules/",
+		"/templates/"
+	],
+	"testResultsProcessor": "jest-junit"
+}
