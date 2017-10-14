@@ -11,10 +11,10 @@ provider:
     MY_KMS_SECRET: ${self:custom.kmsSecrets.secrets.foo}
 
   iamRoleStatements:
-  - Effect: Allow
-    Action:
-      - KMS:Decrypt
-    Resource: ${self:custom.kmsSecrets.keyArn}
+  # - Effect: Allow
+  #   Action:
+  #     - KMS:Decrypt
+  #   Resource: ${self:custom.kmsSecrets.keyArn}
 
 
 plugins:
