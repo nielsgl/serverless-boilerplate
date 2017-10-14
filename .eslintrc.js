@@ -13,6 +13,7 @@ module.exports = {
 		"import/no-extraneous-dependencies" : "off"
 	},
 	"env": {
-		"es6": true
+		"es6": true,
+		"jest": true,
 	}
 };
