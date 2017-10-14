@@ -5,7 +5,7 @@ const hello = async (event, context, cb) => {
 	const kms = new AWS.KMS();
 
 	let data;
-	let decrypted;
+	let decrypted = '';
 	try {
 		if (process.env.MY_KMS_SECRET) {
 			const opts = {
@@ -23,7 +23,6 @@ const hello = async (event, context, cb) => {
 	const response = {
 		statusCode: 200,
 		body: JSON.stringify({
-			message: 'Hello, Serverless World!',
 			decrypted,
 		}),
 	};
