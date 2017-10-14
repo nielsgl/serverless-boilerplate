@@ -54,9 +54,9 @@ functions:
           method: get
           path: hello
 
-  kms:
-    handler: handler.kms
-    events:
-      - http:
-          method: get
-          path: kms
+  # kms:
+  #   handler: handler.kms
+  #   events:
+  #     - http:
+  #         method: get
+  #         path: kms
