@@ -27,6 +27,7 @@
 	},
 	"main": "handler.js",
 	"scripts": {
+		"clean": "rm -rf coverage node_modules .serverless .webpack",
 		"lint": "eslint .",
 		"lint:watch": "gulp",
 		"start": "serverless offline start",
