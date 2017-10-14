@@ -66,6 +66,14 @@ jobs:
       - store_artifacts:
           path: ~/app/coverage
 
+      # - run:
+      #     name: Send coverage to Code Climate
+      #     command: ./cc-test-reporter after-build --coverage-input-type lcov --exit-code $?
+
       - run:
-          name: Send coverage to Code Climate
-          command: ./cc-test-reporter after-build --coverage-input-type lcov --exit-code $?
+          name: Prepare coverage for Code Climate
+          command: ./cc-test-reporter format-coverage -t lcov $$CIRCLE_ARTIFACTS/coverage/lcov.info
+
+      - run:
+          name: Upload coverage to Code Climate
+          command: ./cc-test-reporter upload-coverage
