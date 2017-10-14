@@ -1,0 +1,12 @@
+const <%= handlerFunction %> = async (event, context, cb) => {
+	const response = {
+		statusCode: 200,
+		body: JSON.stringify({
+			status: 'ok',
+		}),
+	};
+
+	return cb(null, response);
+};
+
+export default <%= handlerFunction %>;
