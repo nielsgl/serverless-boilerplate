@@ -64,4 +64,4 @@ jobs:
       - store_artifacts:
           path: ~/app/coverage
 
-      - run: ./cc-test-reporter after-build --exit-code $?
+      - run: ./cc-test-reporter after-build -d --coverage-input-type lcov --exit-code $?
