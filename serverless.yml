@@ -19,12 +19,20 @@ provider:
 
 plugins:
   - serverless-kms-secrets
+  - serverless-jest-plugin
   - serverless-webpack
   - serverless-offline
 
 
 custom:
   webpackIncludeModules: true
+
+  serverless-jest-plugin:
+    functionTemplate: templates/function-template.ejs
+    testTemplate: templates/test-template.ejs
+
+  jest:
+
   serverless-kms-secrets:
     secretsFile:
     # secretsFile: kms2-secrets.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml # (optional)

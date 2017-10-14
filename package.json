@@ -30,7 +30,8 @@
 		"lint": "eslint .",
 		"lint:watch": "gulp",
 		"start": "serverless offline start",
-		"test": "echo \"Error: no test specified\" && exit 0"
+		"test": "jest",
+		"test:coverage": "jest --coverage"
 	},
 	"devDependencies": {
 		"aws-sdk": "^2.133.0",
@@ -44,6 +45,7 @@
 		"gulp": "^3.9.1",
 		"gulp-eslint": "^4.0.0",
 		"run-sequence": "^2.2.0",
+		"serverless-jest-plugin": "^0.1.6",
 		"serverless-kms-secrets": "^1.0.2",
 		"serverless-offline": "^3.16.0",
 		"serverless-webpack": "^3.1.2",
