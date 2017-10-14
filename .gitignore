@@ -56,4 +56,10 @@ typings/
 
 # dotenv environment variables file
 .env
+kms-secrets*.yml
 
+# Serverless directories
+.serverless
+
+# Webpack directories
+.webpack

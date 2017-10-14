@@ -1,0 +1,4 @@
+.serverless
+.webpack
+coverage
+node_modules
