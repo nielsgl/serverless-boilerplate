@@ -2,7 +2,8 @@
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 [[npm version](https://badge.fury.io/js/serverless-offline.svg)](https://badge.fury.io/js/serverless-offline)
-[[Build Status](https://travis-ci.org/dherault/serverless-offline.svg?branch=master)](https://travis-ci.org/dherault/serverless-offline)
+[![CircleCI](https://circleci.com/gh/nielsgl/serverless-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/nielsgl/serverless-boilerplate/tree/master)
+[![CircleCI](https://circleci.com/gh/nielsgl/serverless-boilerplate/tree/develop.svg?style=svg)](https://circleci.com/gh/nielsgl/serverless-boilerplate/tree/develop)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 
 Serverless Boilerplate - Generic boilerplate for applications using the Serverless Framework
