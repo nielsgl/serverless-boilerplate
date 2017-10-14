@@ -1,0 +1,54 @@
+{
+	"name": "serverless-boilerplate",
+	"description": "Serverless boilerplate",
+	"version": "1.0.0",
+	"author": "Niels van Galen Last <nvangalenlast@gmail.com> (https://nielsgl.com)",
+	"license": "MIT",
+	"homepage": "https://github.com/nielsgl/serverless-boilerplate#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nielsgl/serverless-boilerplate.git"
+	},
+	"bugs": {
+		"url": "https://github.com/nielsgl/serverless-boilerplate/issues"
+	},
+	"keywords": [
+		"serverless",
+		"boilerplate",
+		"starter",
+		"starter kit",
+		"webpack",
+		"offline",
+		"docker"
+	],
+	"engines": {
+		"node": ">=8.5.0",
+		"npm": "~5.5.1"
+	},
+	"main": "handler.js",
+	"scripts": {
+		"lint": "eslint .",
+		"lint:watch": "gulp",
+		"start": "serverless offline start",
+		"test": "echo \"Error: no test specified\" && exit 0"
+	},
+	"devDependencies": {
+		"babel-core": "^6.25.0",
+		"babel-loader": "^7.1.1",
+		"babel-plugin-transform-runtime": "^6.23.0",
+		"babel-preset-env": "^1.6.0",
+		"eslint": "^4.8.0",
+		"eslint-config-airbnb-base": "^12.0.2",
+		"eslint-plugin-import": "^2.7.0",
+		"gulp": "^3.9.1",
+		"gulp-eslint": "^4.0.0",
+		"run-sequence": "^2.2.0",
+		"serverless-offline": "^3.16.0",
+		"serverless-webpack": "^3.1.2",
+		"webpack": "^3.3.0",
+		"webpack-node-externals": "^1.6.0"
+	},
+	"dependencies": {
+		"babel-runtime": "^6.26.0"
+	}
+}
