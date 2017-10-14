@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/prefer-default-export
 const hello = (event, context, cb) => {
 	const p = new Promise((resolve) => {
 		resolve('success');
