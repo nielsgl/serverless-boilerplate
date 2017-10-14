@@ -3,6 +3,8 @@
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/nielsgl/serverless-boilerplate/master.svg?label=master%20build)](https://circleci.com/gh/nielsgl/serverless-boilerplate/tree/master)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/nielsgl/serverless-boilerplate/develop.svg?label=develop%20build)](https://circleci.com/gh/nielsgl/serverless-boilerplate/tree/develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/3c139bae9f67f3486528/maintainability)](https://codeclimate.com/github/nielsgl/serverless-boilerplate/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/3c139bae9f67f3486528/test_coverage)](https://codeclimate.com/github/nielsgl/serverless-boilerplate/test_coverage)
 
 [![node](https://img.shields.io/node/v/gh-badges.svg)]()
 [![Libraries.io for GitHub](https://img.shields.io/librariesio/github/nielsgl/serverless-boilerplate.svg)](https://img.shields.io/librariesio/github/nielsgl/serverless-boilerplate.svg)
