@@ -31,9 +31,13 @@ jobs:
           name: Install Code Climate
           command: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
 
-      - run: chmod +x ./cc-test-reporter
+      - run:
+          name: Make Code Climate Reporter executable
+          command: chmod +x ./cc-test-reporter
 
-      - run: yarn install
+      - run:
+          name: Install dependencies
+          command: yarn install
 
       - save_cache:
           paths:
