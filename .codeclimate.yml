@@ -4,10 +4,7 @@ engines:
     enabled: true
     config:
       languages:
-      - ruby
       - javascript
-      - python
-      - php
   eslint:
     enabled: true
   fixme:
@@ -23,5 +20,8 @@ ratings:
   - "**.py"
   - "**.rb"
 exclude_paths:
+- .serverless/
+- .webpack/
+- coverage/
 - node_modules/
 - test/
