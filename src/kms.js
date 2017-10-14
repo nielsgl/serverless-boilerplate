@@ -7,14 +7,16 @@ const hello = async (event, context, cb) => {
 	let data;
 	let decrypted;
 	try {
-		const opts = {
-			CiphertextBlob: new Buffer.from(process.env.MY_KMS_SECRET, 'base64'),
-		};
+		if (process.env.MY_KMS_SECRET) {
+			const opts = {
+				CiphertextBlob: new Buffer.from(process.env.MY_KMS_SECRET, 'base64'),
+			};
 
-		data = await kms.decrypt(opts).promise();
-		decrypted = String(data.Plaintext);
+			data = await kms.decrypt(opts).promise();
+			decrypted = String(data.Plaintext);
+		}
 	} catch (e) {
-		console.log('error', e);
+		console.log('Error', e);
 	}
 
 

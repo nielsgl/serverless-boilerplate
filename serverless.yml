@@ -26,9 +26,9 @@ plugins:
 custom:
   webpackIncludeModules: true
   serverless-kms-secrets:
-    keyId: '123abc'
-  #   secretsFile: kms-secrets.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml # (optional)
-  # kmsSecrets: ${file(kms-secrets.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml)}
+    secretsFile:
+    # secretsFile: kms2-secrets.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml # (optional)
+  # kmsSecrets: ${file(kms-secrets2.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml)}
 
 
 functions:
