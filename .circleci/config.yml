@@ -6,10 +6,6 @@ version: 2
 
 jobs:
   build:
-
-    # environment:
-    #   CC_TEST_REPORTER_ID: ${CC_TEST_REPORTER_ID}
-
     docker:
       # specify the version you desire here
       - image: circleci/node:8.5.0
@@ -34,8 +30,8 @@ jobs:
       - run:
           name: Install Code Climate
           command: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+
       - run: chmod +x ./cc-test-reporter
-      # - run: sudo mkdir -p $CIRCLE_TEST_REPORTS/junit
 
       - run: yarn install
 
@@ -49,7 +45,9 @@ jobs:
           name: Run lint
           command: yarn lint
 
-      - run: ./cc-test-reporter before-build
+      - run:
+          name: Prepare Code Climate for receiving coverage
+          command: ./cc-test-reporter before-build
 
       # run tests
       - run:
@@ -64,4 +62,6 @@ jobs:
       - store_artifacts:
           path: ~/app/coverage
 
-      - run: ./cc-test-reporter after-build -d --coverage-input-type lcov --exit-code $?
+      - run:
+          name: Send coverage to Code Climate
+          command: ./cc-test-reporter after-build --coverage-input-type lcov --exit-code $?
