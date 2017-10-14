@@ -42,3 +42,11 @@ jobs:
       - run:
           name: Run tests
           command: yarn test
+
+      # store test results
+      - store_test_results:
+          path: ~/app/coverage
+
+      # store artifacts
+      - store_artifacts:
+          path: ~/app/coverage
