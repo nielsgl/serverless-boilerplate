@@ -72,7 +72,7 @@ jobs:
 
       - run:
           name: Prepare coverage for Code Climate
-          command: ./cc-test-reporter format-coverage -t lcov $$CIRCLE_ARTIFACTS/coverage/lcov.info
+          command: ./cc-test-reporter format-coverage -t lcov $CIRCLE_ARTIFACTS/coverage/lcov.info
 
       - run:
           name: Upload coverage to Code Climate
