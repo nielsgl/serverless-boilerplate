@@ -68,7 +68,6 @@ This boilerplate contains the following plugins:
 - API logs
 - Hooks
 - Build plugin
-- KMS secrets
 - Configuration management
 - Test framework (jest)
 - DynamoDB / (Dynalite?)
@@ -80,6 +79,7 @@ This boilerplate contains the following plugins:
 
 **Done:**
 - ~~Gulp with watch and eslint~~
+- ~~KMS secrets~~
 
 ## Credits and inspiration
 
