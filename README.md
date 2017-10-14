@@ -1,7 +1,5 @@
 # Serverless Boilerplate
 
----
-
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/nielsgl/serverless-boilerplate/master.svg?label=master%20build)](https://circleci.com/gh/nielsgl/serverless-boilerplate/tree/master)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/nielsgl/serverless-boilerplate/develop.svg?label=develop%20build)](https://circleci.com/gh/nielsgl/serverless-boilerplate/tree/develop)
@@ -43,9 +41,9 @@ Serverless Boilerplate - Generic boilerplate for applications using the Serverle
 
 ## TODO
 
+- ~~Gulp with watch and eslint~~
 - Test framework (jest)
 - Dynamodb
-- Gulp with watch and eslint
 - Containerization with Docker
 - Coverage check with Coveralls / Codecov
 - Quality check with CodeClimate
