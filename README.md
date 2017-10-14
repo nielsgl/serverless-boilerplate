@@ -41,13 +41,22 @@ Serverless Boilerplate - Generic boilerplate for applications using the Serverle
 
 ## TODO
 
-- ~~Gulp with watch and eslint~~
+- Automatic AWS Documentation
+- API logs
+- Hooks
+- Build plugin
+- KMS secrets
+- Configuration management
 - Test framework (jest)
-- Dynamodb
+- DynamoDB / (Dynalite?)
 - Containerization with Docker
 - Coverage check with Coveralls / Codecov
 - Quality check with CodeClimate
+- Shell
 - ??
+
+**Done:**
+- ~~Gulp with watch and eslint~~
 
 ## Credits and inspiration
 

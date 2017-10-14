@@ -1,17 +1,12 @@
-const hello = (event, context, cb) => {
-	const p = new Promise((resolve) => {
-		resolve('success');
-	});
+const hello = async (event, context, cb) => {
 	const response = {
 		statusCode: 200,
 		body: JSON.stringify({
-			message: 'Go Serverless Webpack (Ecma Script) v1.0! Second module!',
-			input: event,
+			message: 'Hello, Serverless World!',
 		}),
 	};
-	p
-		.then(() => cb(null, response))
-		.catch(e => cb(e));
+
+	return cb(null, response);
 };
 
 export default hello;
