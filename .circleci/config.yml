@@ -40,8 +40,8 @@ jobs:
 
       # run tests
       - run:
-          name: Run tests
-          command: yarn test
+          name: Run tests with coverage
+          command: yarn test:coverage
 
       # store test results
       - store_test_results:
