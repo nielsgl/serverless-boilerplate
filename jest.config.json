@@ -1,6 +1,7 @@
 {
 	"collectCoverageFrom": [
 		"**/lib/**",
+		"!**/lib/*.js",
 		"**/src/**",
 		"!**/src/*.example.*"
 	],

@@ -4,7 +4,7 @@ const error = require('debug')('app:err:src:kms');
 const AWS = require('aws-sdk');
 
 const hello = async (event, context, cb) => {
-	AWS.config.update({ region: 'us-west-2' });
+	AWS.config.update({region: 'us-west-2'});
 	const kms = new AWS.KMS();
 
 	let data;
