@@ -2,7 +2,7 @@ const debug = require('debug')('app:log:src:kms');
 const error = require('debug')('app:err:src:kms');
 const AWS = require('aws-sdk');
 
-const http = require('../lib/services/http');
+const http = require('../../lib/services/http');
 
 const hello = async (event, context, cb) => {
 	AWS.config.update({region: 'us-west-2'});

@@ -3,7 +3,7 @@
 		"**/lib/**",
 		"!**/lib/*.js",
 		"**/src/**",
-		"!**/src/*.example.*"
+		"!**/src/examples/**"
 	],
 	"coveragePathIgnorePatterns": [
 		"<rootDir>/node_modules/",
