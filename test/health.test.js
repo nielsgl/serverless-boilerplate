@@ -1,10 +1,7 @@
-const debug = require('debug')('app:log:test:health');
-const error = require('debug')('app:err:test:health');
-
 const jestPlugin = require('serverless-jest-plugin');
 
-const {lambdaWrapper} = jestPlugin;
-const endpoint = lambdaWrapper.wrap(require('../handler'), {handler: 'health'});
+const { lambdaWrapper } = jestPlugin;
+const endpoint = lambdaWrapper.wrap(require('../handler'), { handler: 'health' });
 
 describe('GET /health', () => {
 	beforeEach((done) => {

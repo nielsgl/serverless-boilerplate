@@ -1,9 +1,8 @@
 {
 	"collectCoverageFrom": [
 		"**/lib/**",
-		"!**/lib/scripts/**",
 		"**/src/**",
-		"!**/src/examples/**"
+		"!**/src/*.example.*"
 	],
 	"coveragePathIgnorePatterns": [
 		"<rootDir>/node_modules/",
