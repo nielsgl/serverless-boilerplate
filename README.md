@@ -13,13 +13,10 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/nielsgl/serverless-boilerplate/master/LICENSE)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/nielsgl/serverless-boilerplate.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D)
-<!-- ([![GitHub](https://img.shields.io/github/downloads/nielsgl/serverless-boilerplate/total.svg)](https://img.shields.io/github/downloads/nielsgl/serverless-boilerplate/total.svg)
-[![GitHub issues](https://img.shields.io/github/issues/nielsgl/serverless-boilerplate.svg)](https://github.com/nielsgl/serverless-boilerplate/issues)
-[![GitHub stars](https://img.shields.io/github/stars/nielsgl/serverless-boilerplate.svg)](https://github.com/nielsgl/serverless-boilerplate/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/nielsgl/serverless-boilerplate.svg)](https://github.com/nielsgl/serverless-boilerplate/network) -->
-
-
-
+<!--([![GitHub](https://img.shields.io/github/downloads/nielsgl/serverless-boilerplate/total.svg)](https://img.shields.io/github/downloads/nielsgl/serverless-boilerplate/total.svg) -->
+<!--[![GitHub issues](https://img.shields.io/github/issues/nielsgl/serverless-boilerplate.svg)](https://github.com/nielsgl/serverless-boilerplate/issues)-->
+<!--[![GitHub stars](https://img.shields.io/github/stars/nielsgl/serverless-boilerplate.svg)](https://github.com/nielsgl/serverless-boilerplate/stargazers)-->
+<!--[![GitHub forks](https://img.shields.io/github/forks/nielsgl/serverless-boilerplate.svg)](https://github.com/nielsgl/serverless-boilerplate/network) -->
 
 Serverless Boilerplate - Generic boilerplate for applications using the Serverless Framework
 
@@ -39,7 +36,6 @@ Serverless Boilerplate - Generic boilerplate for applications using the Serverle
 ## Installation
 
 ## Usage and command line options
-
 
 ### KMS
 
@@ -65,7 +61,7 @@ This boilerplate contains the following plugins:
 
 ## Debug process
 
-## TODO
+## TO DO
 
 - Automatic AWS Documentation
 - API logs
@@ -79,10 +75,12 @@ This boilerplate contains the following plugins:
 - Shell
 - ??
 
-**In Progress**
+#### In Progress:
+
 - Test framework (jest)
 
-**Done:**
+#### Done:
+
 - ~~Gulp with watch and eslint~~
 - ~~KMS secrets~~
 
@@ -91,10 +89,10 @@ This boilerplate contains the following plugins:
 ### Jest Plugin
 
 The jest plugin seems to have several issues, such as:
+
 - it doesn't respect a custom template for tests,
 - when an error occurs while creating a function and test it still updates the `serverless.yml` file but does not create the function and test file,
 - running `serverless invoke test --function foo` only works when the handler defined in the function of `serverless.yml` matches the test name.
-
 
 ## Credits and inspiration
 
