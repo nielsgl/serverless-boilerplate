@@ -9,6 +9,16 @@ engines:
     enabled: true
   fixme:
     enabled: true
+  git-legal:
+    enabled: false
+  grep:
+    enabled: false
+  markdownlint:
+    enabled: false
+  nodesecurity:
+    enabled: true
+  requiresafe:
+    enabled: true
 ratings:
   paths:
   - "**.js"

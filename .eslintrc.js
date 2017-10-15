@@ -5,6 +5,9 @@ module.exports = {
 		"indent": ["error", "tab", {"MemberExpression": 1}],
 		"no-tabs": "off",
 		"new-cap": ["error", { "newIsCap": false }],
+		"no-unused-vars": ["error", {"varsIgnorePattern": "debug|error"}],
+		"object-curly-spacing": ["error", "never"],
+		"camelcase": "off",
 
 		// doesn't work in node v4 :(
 		// "strict": "off",

@@ -14,6 +14,10 @@ jobs:
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
+    environment:
+      # COVERALLS_REPO_TOKEN: $COVERALLS_REPO_TOKEN
+      COVERALLS_SERVICE_JOB_ID: "${CIRCLE_BUILD_NUM}"
+      COVERALLS_SERVICE_NAME: CircleCI
 
     working_directory: ~/app
 
@@ -26,6 +30,14 @@ jobs:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
+
+      # # Test for offline server
+      # - run:
+      #     name: Installing Serverless Framework
+      #     command: sudo npm install -g serverless
+      # - run:
+      #     name: Test for starting offline server
+      #     command: ./lib/scripts/startOffline.sh
 
       - run:
           name: Install Code Climate
@@ -58,6 +70,10 @@ jobs:
           name: Run tests with coverage
           command: yarn test:coverage
 
+      # - run:
+      #     name: Test for stopping offline server
+      #     command: ./lib/scripts/stopOffline.sh
+
       # store test results
       - store_test_results:
           path: ~/app/coverage
@@ -77,3 +93,7 @@ jobs:
       - run:
           name: Upload coverage to Code Climate
           command: ./cc-test-reporter upload-coverage
+
+      # - run:
+      #     name: Send results to Coveralls.io
+      #     command: yarn test:cover:CI
