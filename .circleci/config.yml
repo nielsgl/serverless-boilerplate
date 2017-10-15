@@ -98,7 +98,6 @@ jobs:
       #     name: Send results to Coveralls.io
       #     command: yarn test:cover:CI
 
-
       - run:
           name: Send coverage report to Codecov
           command: cat coverage/lcov.info | bash <(curl -s https://codecov.io/bash)
