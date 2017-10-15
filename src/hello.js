@@ -1,3 +1,6 @@
+const debug = require('debug')('app:log:src:hello');
+const debug = require('debug')('app:err:src:hello');
+
 const hello = async (event, context, cb) => {
 	const response = {
 		statusCode: 200,

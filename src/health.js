@@ -1,3 +1,5 @@
+const debug = require('debug')('app:log:src:health');
+
 const health = async (event, context, cb) => {
 	const response = {
 		statusCode: 200,

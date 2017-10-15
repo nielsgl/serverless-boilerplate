@@ -1,3 +1,6 @@
+const debug = require('debug')('app:log:src:kms');
+const error = require('debug')('app:err:src:kms');
+
 const AWS = require('aws-sdk');
 
 const hello = async (event, context, cb) => {
@@ -16,7 +19,7 @@ const hello = async (event, context, cb) => {
 			decrypted = String(data.Plaintext);
 		}
 	} catch (e) {
-		console.log('Error', e);
+		error('Error', e);
 	}
 
 
