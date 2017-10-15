@@ -82,6 +82,6 @@ jobs:
           name: Upload coverage to Code Climate
           command: ./cc-test-reporter upload-coverage
 
-      - run:
-          name: Send results to Coveralls.io
-          command: yarn test:cover:CI
+      # - run:
+      #     name: Send results to Coveralls.io
+      #     command: yarn test:cover:CI

@@ -33,8 +33,8 @@
 		"start": "serverless offline start",
 		"test": "jest --config jest.config.json",
 		"test:coverage": "yarn test --coverage",
-		"test:coveralls": "yarn test --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
 
+		"test:coveralls": "yarn test --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
 		"CI:test": "./node_modules/.bin/babel-node templates/testCI.js",
 		"test:cover:CI": "npm run CI:test -- --coverage && cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
 	},
