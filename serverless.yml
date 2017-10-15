@@ -9,9 +9,6 @@ provider:
   cfLogs: true
   environment:
     MY_KMS_SECRET: ${self:custom.kmsSecrets.secrets.foo}
-    SERVERLESS_STAGE: ${opt:stage, self:provider.stage}
-    SERVERLESS_REGION: ${opt:region, self:provider.region}
-    SERVERLESS_PROJECT: ${self:service}
 
   iamRoleStatements:
   # - Effect: Allow
@@ -28,15 +25,11 @@ plugins:
 
 
 custom:
-  # preTestCommands:
-  #   - bash .tools/startOffline.sh
-  # postTestCommands:
-  #   - bash .tools/stopOffline.sh
   webpackIncludeModules: true
 
   serverless-jest-plugin:
-    functionTemplate: config/templates/function-template.ejs
-    testTemplate: config/templates/test-template.ejs
+    functionTemplate: templates/function-template.ejs
+    testTemplate: templates/test-template.ejs
 
   jest:
 
@@ -47,7 +40,6 @@ custom:
 
 
 functions:
-
   health:
     handler: handler.health
     events:

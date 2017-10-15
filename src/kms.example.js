@@ -1,11 +1,7 @@
-const debug = require('debug')('app:log:src:kms');
-const error = require('debug')('app:err:src:kms');
 const AWS = require('aws-sdk');
 
-const http = require('../../lib/services/http');
-
 const hello = async (event, context, cb) => {
-	AWS.config.update({region: 'us-west-2'});
+	AWS.config.update({ region: 'us-west-2' });
 	const kms = new AWS.KMS();
 
 	let data;
@@ -20,10 +16,18 @@ const hello = async (event, context, cb) => {
 			decrypted = String(data.Plaintext);
 		}
 	} catch (e) {
-		error('Error', e);
+		console.log('Error', e);
 	}
 
-	http.success({decrypted}, cb);
+
+	const response = {
+		statusCode: 200,
+		body: JSON.stringify({
+			decrypted,
+		}),
+	};
+
+	return cb(null, response);
 };
 
 export default hello;
