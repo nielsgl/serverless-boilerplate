@@ -31,6 +31,10 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+      # Test for offline server
+      - run:
+          name: Installing Serverless Framework
+          command: sudo npm install -g serverless
       - run:
           name: Test for starting offline server
           command: ./bin/startOffline.sh
