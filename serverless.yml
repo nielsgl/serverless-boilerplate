@@ -8,7 +8,7 @@ provider:
   stage: dev
   cfLogs: true
   environment:
-    MY_KMS_SECRET: ${self:custom.kmsSecrets.secrets.foo}
+    # MY_KMS_SECRET: ${self:custom.kmsSecrets.secrets.foo}
     SERVERLESS_STAGE: ${opt:stage, self:provider.stage}
     SERVERLESS_REGION: ${opt:region, self:provider.region}
     SERVERLESS_PROJECT: ${self:service}
@@ -21,6 +21,7 @@ provider:
 
 
 plugins:
+  - serverless-aws-documentation
   - serverless-kms-secrets
   - serverless-jest-plugin
   - serverless-webpack
@@ -38,12 +39,34 @@ custom:
     functionTemplate: config/templates/function-template.ejs
     testTemplate: config/templates/test-template.ejs
 
-  jest:
-
   serverless-kms-secrets:
     secretsFile:
     # secretsFile: kms2-secrets.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml # (optional)
   # kmsSecrets: ${file(kms-secrets2.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml)}
+  documentation:
+    api:
+      info:
+        version: '1'
+        title: 'Serverless Boilerplate'
+        description: 'Generic boilerplate for developing applications using the Serverless Framework'
+        contact:
+          name: 'Niels van Galen Last'
+          url: 'https://nielsgl.com'
+          email: 'nvangalenlast@gmail.com'
+        license:
+          name: 'MIT'
+          url: 'https://github.com/nielsgl/serverless-boilerplate/blob/master/LICENSE'
+    tags:
+      - name: MyTag
+        description: This is my tag
+    resources:
+      - path: '/health'
+        description: 'Endpoint to see if the serverless app is working'
+      - path: '/hello'
+        description: 'Joyful greeting by your Serverless Application'
+    models:
+      - ${file(lib/docs/models/200SuccessResponse.yml)}
+
 
 
 functions:
@@ -54,6 +77,16 @@ functions:
       - http:
           method: get
           path: health
+          cors: true
+          documentation:
+            summary: 'GET /health'
+            tags:
+              - MyTag
+            description: 'Check whether your serverless application is working'
+            methodResponses:
+              - statusCode: '200'
+                responseModels:
+                  'application/json': SuccessResponse
 
   hello:
     handler: handler.hello
@@ -61,6 +94,16 @@ functions:
       - http:
           method: get
           path: hello
+          cors: true
+          documentation:
+            summary: 'GET /hello'
+            tags:
+              - MyTag
+            description: 'Let your serverless application say hello to the world!'
+            methodResponses:
+              - statusCode: '200'
+                responseModels:
+                  'application/json': SuccessResponse
 
   # kms:
   #   handler: handler.kms
