@@ -15,12 +15,12 @@ module.exports = {
 		}],
 	},
 	plugins: [
-		new CopyWebpackPlugin([
+		new copyWebpackPlugin([
 			// { from: '.env' },
 			{from: 'config/default.js', to: 'config/default.js'},
 			// {from: `config/${process.env.NODE_ENV}.js`, to: `config/${process.env.NODE_ENV}.js`},
 		]),
-	]
+	],
 	externals: [nodeExternals()],
 	output: {
 		libraryTarget: 'commonjs',
