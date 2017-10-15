@@ -30,34 +30,46 @@
 		"clean": "rm -rf coverage node_modules .serverless .webpack",
 		"lint": "eslint .",
 		"lint:watch": "gulp",
+		"nsp": "nsp check",
+		"postinstall": "npm shrinkwrap",
 		"start": "serverless offline start",
 		"test": "jest --config jest.config.json",
-		"test:coverage": "yarn test --coverage"
+		"test:coverage": "yarn test --coverage",
+		"test:coveralls": "yarn test --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+		"CI:test": "./node_modules/.bin/babel-node lib/scripts/testCI.js",
+		"test:cover:CI": "npm run CI:test -- --coverage && cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
 	},
 	"jest-junit": {
 		"output": "./coverage/junit.xml"
 	},
 	"devDependencies": {
 		"aws-sdk": "^2.133.0",
-		"babel-core": "^6.25.0",
-		"babel-loader": "^7.1.1",
+		"babel-cli": "^6.26.0",
+		"babel-core": "^6.26.0",
+		"babel-loader": "^7.1.2",
 		"babel-plugin-transform-runtime": "^6.23.0",
 		"babel-preset-env": "^1.6.0",
-		"eslint": "^4.8.0",
+		"copy-webpack-plugin": "^4.1.1",
+		"coveralls": "^3.0.0",
+		"eslint": "^4.9.0",
 		"eslint-config-airbnb-base": "^12.0.2",
 		"eslint-plugin-import": "^2.7.0",
 		"gulp": "^3.9.1",
 		"gulp-eslint": "^4.0.0",
 		"jest-junit": "^3.1.0",
+		"nsp": "^2.8.1",
 		"run-sequence": "^2.2.0",
 		"serverless-jest-plugin": "^0.1.6",
 		"serverless-kms-secrets": "^1.0.2",
 		"serverless-offline": "^3.16.0",
 		"serverless-webpack": "^3.1.2",
-		"webpack": "^3.3.0",
+		"webpack": "^3.7.1",
 		"webpack-node-externals": "^1.6.0"
 	},
 	"dependencies": {
-		"babel-runtime": "^6.26.0"
+		"babel-runtime": "^6.26.0",
+		"boom": "^6.0.0",
+		"config": "^1.26.2",
+		"debug": "^3.1.0"
 	}
 }
