@@ -1,7 +1,7 @@
 {
 	"name": "serverless-boilerplate",
 	"description": "Serverless boilerplate",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Niels van Galen Last <nvangalenlast@gmail.com> (https://nielsgl.com)",
 	"license": "MIT",
 	"homepage": "https://github.com/nielsgl/serverless-boilerplate#readme",
