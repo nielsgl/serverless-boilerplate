@@ -1,12 +1,10 @@
-const health = async (event, context, cb) => {
-	const response = {
-		statusCode: 200,
-		body: JSON.stringify({
-			status: 'ok',
-		}),
-	};
+const debug = require('debug')('app:log:src:health');
+const error = require('debug')('app:err:src:health');
 
-	return cb(null, response);
+const http = require('../lib/services/http');
+
+const health = async (event, context, cb) => {
+	http.success({status: 'ok'}, cb);
 };
 
 export default health;
