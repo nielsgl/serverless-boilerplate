@@ -67,22 +67,22 @@ This boilerplate contains the following plugins:
 - API logs
 - Hooks
 - Build plugin
-- Configuration management
 - DynamoDB / (Dynalite?)
 - Containerization with Docker
-- Coverage check with Coveralls / Codecov
-- Quality check with CodeClimate
 - Shell
 - ??
 
 #### In Progress:
 
 - Test framework (jest)
+- Coverage check with Coveralls / Codecov
 
 #### Done:
 
 - ~~Gulp with watch and eslint~~
 - ~~KMS secrets~~
+- ~~Quality check with CodeClimate~~
+- ~~Configuration management~~
 
 ## Notes
 
@@ -96,10 +96,12 @@ The jest plugin seems to have several issues, such as:
 
 ## Credits and inspiration
 
+- [SC5's Boilerplate](https://github.com/SC5/sc5-serverless-boilerplate)
+
 ## Contributing
 
 Yes, thank you!
-This plugin is community-driven, most of its features are from different authors.
+This boilerplate is community-driven, most of its features are from different authors.
 Please update the docs and tests and add your name to the package.json file.
 We try to follow [Airbnb's JavaScript Style Guide](https://github.com/airbnb/javascript).
 
