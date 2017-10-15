@@ -37,7 +37,7 @@ jobs:
           command: sudo npm install -g serverless
       - run:
           name: Test for starting offline server
-          command: ./bin/startOffline.sh
+          command: ./lib/scripts/startOffline.sh
 
       - run:
           name: Install Code Climate
@@ -72,7 +72,7 @@ jobs:
 
       - run:
           name: Test for stopping offline server
-          command: ./bin/stopOffline.sh
+          command: ./lib/scripts/stopOffline.sh
 
       # store test results
       - store_test_results:
