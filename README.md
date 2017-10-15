@@ -109,4 +109,4 @@ We try to follow [Airbnb's JavaScript Style Guide](https://github.com/airbnb/jav
 
 ## License
 
-MIT
+[MIT](https://github.com/nielsgl/serverless-boilerplate/blob/master/LICENSE)
