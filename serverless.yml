@@ -28,8 +28,8 @@ custom:
   webpackIncludeModules: true
 
   serverless-jest-plugin:
-    functionTemplate: templates/function-template.ejs
-    testTemplate: templates/test-template.ejs
+    functionTemplate: config/templates/function-template.ejs
+    testTemplate: config/templates/test-template.ejs
 
   jest:
 
