@@ -1,15 +1,10 @@
 const debug = require('debug')('app:log:src:hello');
 const error = require('debug')('app:err:src:hello');
 
-const hello = async (event, context, cb) => {
-	const response = {
-		statusCode: 200,
-		body: JSON.stringify({
-			message: 'Hello, Serverless World!',
-		}),
-	};
+const http = require('../lib/services/http');
 
-	return cb(null, response);
+const hello = async (event, context, cb) => {
+	http.success({message: 'Hello, Serverless World!'}, cb);
 };
 
 export default hello;
