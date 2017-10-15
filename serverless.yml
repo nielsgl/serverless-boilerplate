@@ -46,16 +46,7 @@ custom:
   documentation:
     api:
       info:
-        version: '1'
-        title: 'Serverless Boilerplate'
-        description: 'Generic boilerplate for developing applications using the Serverless Framework'
-        contact:
-          name: 'Niels van Galen Last'
-          url: 'https://nielsgl.com'
-          email: 'nvangalenlast@gmail.com'
-        license:
-          name: 'MIT'
-          url: 'https://github.com/nielsgl/serverless-boilerplate/blob/master/LICENSE'
+        ${file(lib/docs/info.yml)}
     tags:
       - name: MyTag
         description: This is my tag
@@ -70,7 +61,6 @@ custom:
 
 
 functions:
-
   health:
     handler: handler.health
     events:
