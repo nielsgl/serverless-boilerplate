@@ -101,4 +101,4 @@ jobs:
 
       - run:
           name: Send coverage report to Codecov
-          command: cat coverage/lcov.info | codecov -t $CODECOV_TOKEN
+          command: cat coverage/lcov.info | ./node_modules/.bin/codecov -t $CODECOV_TOKEN
