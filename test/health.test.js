@@ -1,5 +1,5 @@
 const debug = require('debug')('app:log:test:health');
-const debug = require('debug')('app:err:test:health');
+const error = require('debug')('app:err:test:health');
 
 const jestPlugin = require('serverless-jest-plugin');
 

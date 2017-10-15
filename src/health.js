@@ -1,4 +1,5 @@
 const debug = require('debug')('app:log:src:health');
+const error = require('debug')('app:err:src:health');
 
 const health = async (event, context, cb) => {
 	const response = {
