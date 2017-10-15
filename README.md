@@ -18,7 +18,7 @@
 <!--[![GitHub stars](https://img.shields.io/github/stars/nielsgl/serverless-boilerplate.svg)](https://github.com/nielsgl/serverless-boilerplate/stargazers)-->
 <!--[![GitHub forks](https://img.shields.io/github/forks/nielsgl/serverless-boilerplate.svg)](https://github.com/nielsgl/serverless-boilerplate/network) -->
 
-Serverless Boilerplate - Generic boilerplate for applications using the Serverless Framework
+Serverless Boilerplate - Generic boilerplate for developing applications using the Serverless Framework.
 
 ---
 
@@ -55,6 +55,7 @@ This boilerplate contains the following plugins:
 - [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack): A Serverless v1.x plugin to build your lambda functions with Webpack.
 - [Serverless KMS Secrets](https://github.com/SC5/serverless-kms-secrets): A Serverless Plugin which helps with encrypting service secrets using the AWS Key Management Service (KMS).
 - [Serverless Jest Plugin](https://github.com/SC5/serverless-jest-plugin): plugin to enable test driven development using jest, and adding functionality to create functions and tests from command line
+- [Serverless AWS Documentation](https://github.com/9cookies/serverless-aws-documentation): Plugin that adds support for AWS API Gateway documentation and models (e.g. to export a Swagger JSON file with input/output definitions and full text documentation for API documentation).
 - file `serverless.yml.json`: Register plugins above
 - file `webpack.config.js`: Settings for webpack-plugin
 - file `templates/function.ejs`: Template to use for new functions
@@ -63,7 +64,6 @@ This boilerplate contains the following plugins:
 
 ## TO DO
 
-- Automatic AWS Documentation
 - API logs
 - Hooks
 - Build plugin
@@ -83,6 +83,7 @@ This boilerplate contains the following plugins:
 - ~~KMS secrets~~
 - ~~Quality check with CodeClimate~~
 - ~~Configuration management~~
+- ~~Automatic AWS Documentation~~
 
 ## Notes
 
@@ -97,6 +98,7 @@ The jest plugin seems to have several issues, such as:
 ## Credits and inspiration
 
 - [SC5's Boilerplate](https://github.com/SC5/sc5-serverless-boilerplate)
+- [9cookies AWS Documentation Scripts](https://github.com/9cookies/serverless-aws-documentation/tree/master/example)
 
 ## Contributing
 
@@ -107,4 +109,4 @@ We try to follow [Airbnb's JavaScript Style Guide](https://github.com/airbnb/jav
 
 ## License
 
-MIT
+[MIT](https://github.com/nielsgl/serverless-boilerplate/blob/master/LICENSE)

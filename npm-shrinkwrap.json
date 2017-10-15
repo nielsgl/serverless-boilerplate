@@ -5654,6 +5654,10 @@
 		"object-assign": {
 			"version": "4.1.1"
 		},
+		"object-hash": {
+			"version": "1.2.0",
+			"dev": true
+		},
 		"object.defaults": {
 			"version": "1.1.0",
 			"dev": true,
@@ -6437,6 +6441,13 @@
 		"sequencify": {
 			"version": "0.0.7",
 			"dev": true
+		},
+		"serverless-aws-documentation": {
+			"version": "0.8.0",
+			"dev": true,
+			"requires": {
+				"object-hash": "1.2.0"
+			}
 		},
 		"serverless-jest-plugin": {
 			"version": "0.1.6",
