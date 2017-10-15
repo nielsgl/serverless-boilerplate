@@ -97,3 +97,8 @@ jobs:
       # - run:
       #     name: Send results to Coveralls.io
       #     command: yarn test:cover:CI
+
+
+      - run:
+          name: Send coverage report to Codecov
+          command: yarn codecov -t $CODECOV_TOKEN
