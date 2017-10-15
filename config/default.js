@@ -4,5 +4,7 @@ module.exports = {
 		port: 3000,
 	},
 
+	foo: 'bar',
+
 	env: '',
 };
