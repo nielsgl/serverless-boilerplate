@@ -10,11 +10,11 @@ engines:
   fixme:
     enabled: true
   git-legal:
-    enabled: true
+    enabled: false
   grep:
     enabled: false
   markdownlint:
-    enabled: true
+    enabled: false
   nodesecurity:
     enabled: true
   requiresafe:
