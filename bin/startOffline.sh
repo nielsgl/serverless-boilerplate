@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 TMPFILE=/var/tmp/offline$$.log
 if [ -f .offline.pid ]; then
