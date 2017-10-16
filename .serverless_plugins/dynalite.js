@@ -6,7 +6,6 @@ const Dynalite = require('dynalite');
 const chokidar = require('graceful-chokidar');
 const AWS = require('aws-sdk');
 
-
 const DEFAULT_PORT = config.db.local.port;
 const DEFAULT_REGION = config.db.local.region;
 
