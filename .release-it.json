@@ -1,10 +1,9 @@
-
 {
   "non-interactive": false,
   "dry-run": false,
   "verbose": false,
   "force": false,
-  "pkgFiles": ["package.json", "yarn.lock"],
+  "pkgFiles": ["package.json"],
   "increment": "patch",
   "preReleaseId": null,
   "buildCommand": false,
@@ -22,14 +21,14 @@
     "afterReleaseCommand": false
   },
   "npm": {
-    "publish": false,
+    "publish": true,
     "publishPath": ".",
     "tag": "latest",
     "private": false,
     "access": null
   },
   "github": {
-    "release": true,
+    "release": false,
     "releaseName": "Release %s",
     "preRelease": false,
     "draft": false,
