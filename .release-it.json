@@ -3,7 +3,7 @@
   "dry-run": false,
   "verbose": false,
   "force": false,
-  "pkgFiles": ["package.json"],
+  "pkgFiles": ["package.json", "yarn.lock"],
   "increment": "patch",
   "preReleaseId": null,
   "buildCommand": false,
