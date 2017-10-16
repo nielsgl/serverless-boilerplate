@@ -49,15 +49,66 @@ Encrypt a variable with
 serverless encrypt --name foo --value bar --keyid {keyId}
 ```
 
+### DynamoDB / Dynalite
+
+This boilerplate includes two options for running DynamoDB: the JVM-based AWS version and Dynalite, a Node-based version of DynamoDB
+
+### DynamoDB
+
+DynamoDB will be installed locally and automatically though the `install:dynamodb` script in `package.json`, i.e., `yarn install:dynamodb`. For the JVM-based version you need to enable to following plugin in your plugins section:
+
+```yaml
+plugins:
+  - serverless-webpack
+  - serverless-dynamodb-local
+  - serverless-offline
+```
+
+Note that it comes after the `serverless-webpack` plugin and before the `serverless-offline` plugin.
+
+This configuration in `serverless.yml` starts DynamoDB automatically when the local server is started with `yarn start` or `serverless offline start`.
+
+```yaml
+custom:
+  dynamodb:
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+      seed: true
+```
+
+You can access the shell interface to interact with DynamoDB at `http://localhost:8000/shell`.
+
+
+### Dynalite
+
+This plugin can be found in the `.serverless_plugins` directory in the root of this boilerplate. I didn't include the official plugin because it does not work with `serverless-offline` and you would need to start it separately.
+ If you want to use Dynalite instead, you need to enable it *before* `serverless-webpack` plugin, for example:
+
+```yaml
+plugins:
+  - serverless-dynalite
+  - serverless-webpack
+  - serverless-offline
+```
+
+### Admin
+
+An admin interface for DynamoDB can be started with `yarn dynamodb:admin`, and will be available on `http://localhost:8001`.
+
+
 ## Contents
 
 This boilerplate contains the following plugins:
 
-- [Serverless Offline Plugin](https://github.com/dherault/serverless-offline): Emulates AWS λ and API Gateway on your local machine to speed up your development cycles
+- [Serverless Offline Plugin](https://github.com/dherault/serverless-offline): Emulates AWS λ and API Gateway on your local machine to speed up your development cycles.
 - [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack): A Serverless v1.x plugin to build your lambda functions with Webpack.
 - [Serverless KMS Secrets](https://github.com/SC5/serverless-kms-secrets): A Serverless Plugin which helps with encrypting service secrets using the AWS Key Management Service (KMS).
 - [Serverless Jest Plugin](https://github.com/SC5/serverless-jest-plugin): plugin to enable test driven development using jest, and adding functionality to create functions and tests from command line
 - [Serverless AWS Documentation](https://github.com/9cookies/serverless-aws-documentation): Plugin that adds support for AWS API Gateway documentation and models (e.g. to export a Swagger JSON file with input/output definitions and full text documentation for API documentation).
+- [Serverless DynamoDB Local](https://github.com/99xt/serverless-dynamodb-local): Allows to run dynamodb locally for serverless.
+
 - file `serverless.yml.json`: Register plugins above
 - file `webpack.config.js`: Settings for webpack-plugin
 - file `templates/function.ejs`: Template to use for new functions
@@ -69,23 +120,23 @@ This boilerplate contains the following plugins:
 - API logs
 - Hooks
 - Build plugin
-- DynamoDB / (Dynalite?)
 - Containerization with Docker
 - Shell
 - ??
 
-#### In Progress:
+### In Progress:
 
 - Test framework (jest)
-- Coverage check with Coveralls / Codecov
 
-#### Done:
+### Done:
 
 - ~~Gulp with watch and eslint~~
 - ~~KMS secrets~~
 - ~~Quality check with CodeClimate~~
 - ~~Configuration management~~
 - ~~Automatic AWS Documentation~~
+- ~~Coverage check with Codecov~~
+- ~~DynamoDB and Dynalite~~
 
 ## Notes
 
@@ -101,6 +152,8 @@ The jest plugin seems to have several issues, such as:
 
 - [SC5's Boilerplate](https://github.com/SC5/sc5-serverless-boilerplate)
 - [9cookies AWS Documentation Scripts](https://github.com/9cookies/serverless-aws-documentation/tree/master/example)
+- [Serverless Dynalite](https://github.com/sdd/serverless-dynalite)
+- [DynamoDB Admin](https://github.com/aaronshaf/dynamodb-admin)
 
 ## Contributing
 

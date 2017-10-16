@@ -7,4 +7,11 @@ module.exports = {
 	foo: 'bar',
 
 	env: '',
+
+	db: {
+		local: {
+			region: 'localhost',
+			port: 8000,
+		},
+	},
 };

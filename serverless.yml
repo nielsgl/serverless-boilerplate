@@ -14,6 +14,10 @@ provider:
     SERVERLESS_PROJECT: ${self:service}
 
   iamRoleStatements:
+  - Effect: Allow
+  Action:
+    - dynamodb:*
+  Resource: arn:aws:dynamodb:*:*:table/${self:custom.table_name}
   # - Effect: Allow
   #   Action:
   #     - KMS:Decrypt
@@ -24,11 +28,14 @@ plugins:
   - serverless-aws-documentation
   - serverless-kms-secrets
   - serverless-jest-plugin
+  - dynalite
   - serverless-webpack
+  # - serverless-dynamodb-local
   - serverless-offline
 
 
 custom:
+  table_name: ${self:service}-table
   # preTestCommands:
   #   - bash .tools/startOffline.sh
   # postTestCommands:
@@ -43,6 +50,14 @@ custom:
     secretsFile:
     # secretsFile: kms2-secrets.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml # (optional)
   # kmsSecrets: ${file(kms-secrets2.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml)}
+
+  dynamodb:
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+      seed: true
+
   documentation:
     api:
       info:
@@ -101,3 +116,20 @@ functions:
   #     - http:
   #         method: get
   #         path: kms
+
+
+resources:
+  Resources:
+    serverlessBoilerplateTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.table_name}
+        AttributeDefinitions:
+          - AttributeName: email
+            AttributeType: S
+        KeySchema:
+          - AttributeName: email
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
