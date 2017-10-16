@@ -16,7 +16,7 @@ engines:
   markdownlint:
     enabled: false
   nodesecurity:
-    enabled: true
+    enabled: false
   requiresafe:
     enabled: true
 ratings:
