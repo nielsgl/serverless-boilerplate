@@ -1,0 +1,8 @@
+name: SuccessResponse
+description: 'The endpoint returns a 200 status'
+contentType: 'application/json'
+schema:
+  type: object
+  properties:
+    status:
+      type: string
