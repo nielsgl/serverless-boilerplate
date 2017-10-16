@@ -69,7 +69,6 @@ This boilerplate contains the following plugins:
 - API logs
 - Hooks
 - Build plugin
-- DynamoDB / (Dynalite?)
 - Containerization with Docker
 - Shell
 - ??
@@ -77,7 +76,7 @@ This boilerplate contains the following plugins:
 #### In Progress:
 
 - Test framework (jest)
-- Coverage check with Coveralls / Codecov
+- DynamoDB / (Dynalite?)
 
 #### Done:
 
@@ -86,6 +85,7 @@ This boilerplate contains the following plugins:
 - ~~Quality check with CodeClimate~~
 - ~~Configuration management~~
 - ~~Automatic AWS Documentation~~
+- ~~Coverage check with Codecov~~
 
 ## Notes
 
