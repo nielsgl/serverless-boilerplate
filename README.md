@@ -140,6 +140,11 @@ This boilerplate contains the following plugins:
 
 ## Notes
 
+### Releases
+
+*Need to write more details*
+Command `yarn release`.
+
 ### Jest Plugin
 
 The jest plugin seems to have several issues, such as:
