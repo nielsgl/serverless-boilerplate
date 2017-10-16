@@ -142,7 +142,8 @@ This boilerplate contains the following plugins:
 
 ### Releases
 
-
+*Need to write more details*
+Command `yarn release`.
 
 ### Jest Plugin
 
