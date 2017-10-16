@@ -1,5 +1,6 @@
 # Serverless Boilerplate
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0eb33455ba0d47e6891504960733c818)](https://www.codacy.com/app/nvangalenlast/serverless-boilerplate?utm_source=github.com&utm_medium=referral&utm_content=nielsgl/serverless-boilerplate&utm_campaign=badger)
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/nielsgl/serverless-boilerplate/master.svg?label=master%20build)](https://circleci.com/gh/nielsgl/serverless-boilerplate/tree/master)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/nielsgl/serverless-boilerplate/develop.svg?label=develop%20build)](https://circleci.com/gh/nielsgl/serverless-boilerplate/tree/develop)
