@@ -105,3 +105,9 @@ jobs:
       - run:
           name: Send coverage report to Codacy
           command: cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage -t $CODACY_PROJECT_TOKEN
+
+
+      # Automagic deployments
+      # - deploy:
+      #     release:
+      #       tag: /(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)/
