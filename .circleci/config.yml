@@ -101,3 +101,7 @@ jobs:
       - run:
           name: Send coverage report to Codecov
           command: cat coverage/lcov.info | bash <(curl -s https://codecov.io/bash)
+
+      - run:
+          name: Send coverage report to Codacy
+          command: cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage -t $CODACY_PROJECT_TOKEN

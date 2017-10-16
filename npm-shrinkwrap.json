@@ -1303,6 +1303,50 @@
 		"co": {
 			"version": "4.6.0"
 		},
+		"codacy-coverage": {
+			"version": "2.0.3",
+			"dev": true,
+			"requires": {
+				"bluebird": "2.11.0",
+				"commander": "2.11.0",
+				"joi": "6.10.1",
+				"lcov-parse": "0.0.10",
+				"lodash": "4.17.4",
+				"log-driver": "1.2.5",
+				"request-promise": "0.4.3"
+			},
+			"dependencies": {
+				"bluebird": {
+					"version": "2.11.0",
+					"dev": true
+				},
+				"hoek": {
+					"version": "2.16.3",
+					"dev": true
+				},
+				"isemail": {
+					"version": "1.2.0",
+					"dev": true
+				},
+				"joi": {
+					"version": "6.10.1",
+					"dev": true,
+					"requires": {
+						"hoek": "2.16.3",
+						"isemail": "1.2.0",
+						"moment": "2.19.1",
+						"topo": "1.1.0"
+					}
+				},
+				"topo": {
+					"version": "1.1.0",
+					"dev": true,
+					"requires": {
+						"hoek": "2.16.3"
+					}
+				}
+			}
+		},
 		"code-point-at": {
 			"version": "1.1.0"
 		},
@@ -6297,6 +6341,26 @@
 					"requires": {
 						"hoek": "4.2.0"
 					}
+				}
+			}
+		},
+		"request-promise": {
+			"version": "0.4.3",
+			"dev": true,
+			"requires": {
+				"bluebird": "2.11.0",
+				"chalk": "1.1.3",
+				"lodash": "3.10.1",
+				"request": "2.83.0"
+			},
+			"dependencies": {
+				"bluebird": {
+					"version": "2.11.0",
+					"dev": true
+				},
+				"lodash": {
+					"version": "3.10.1",
+					"dev": true
 				}
 			}
 		},
