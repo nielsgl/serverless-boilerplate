@@ -140,6 +140,10 @@ This boilerplate contains the following plugins:
 
 ## Notes
 
+### Releases
+
+
+
 ### Jest Plugin
 
 The jest plugin seems to have several issues, such as:
