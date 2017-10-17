@@ -36,6 +36,7 @@
 		"nsp": "nsp check",
 		"prepush": "yarn lint; yarn test",
 		"postinstall": "",
+		"prestart": "node lib/scripts/prestart.js",
 		"start": "serverless offline start",
 		"release": "release-it",
 		"test": "jest --config jest.config.json",
