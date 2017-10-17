@@ -143,7 +143,7 @@ This boilerplate contains the following plugins:
 ### In Progress:
 
 - Test framework (jest)
-- Domain Name Manager
+
 
 ### Done:
 
@@ -154,6 +154,7 @@ This boilerplate contains the following plugins:
 - ~~Automatic AWS Documentation~~
 - ~~Coverage check with Codecov~~
 - ~~DynamoDB and Dynalite~~
+- ~~Domain Name Manager~~
 
 ## Notes
 
