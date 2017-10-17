@@ -1,0 +1,8 @@
+summary: 'GET /hello'
+tags:
+  - MyTag
+description: 'Let your serverless application say hello to the world!'
+methodResponses:
+  - statusCode: '200'
+    responseModels:
+      'application/json': SuccessResponse

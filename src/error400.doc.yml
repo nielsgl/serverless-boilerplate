@@ -1,0 +1,11 @@
+summary: 'GET /error'
+tags:
+  - MyTag
+description: 'Returns a 400 error'
+methodResponses:
+  - statusCode: '200'
+    responseModels:
+      'application/json': SuccessResponse
+  - statusCode: '400'
+    responseModels:
+      'application/json': BadRequestResponse
