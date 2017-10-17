@@ -1,4 +1,4 @@
-const config = require('config');
+// const config = require('config');
 const path = require('path');
 const slsw = require('serverless-webpack');
 const nodeExternals = require('webpack-node-externals');
