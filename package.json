@@ -27,6 +27,7 @@
 	},
 	"main": "handler.js",
 	"scripts": {
+		"ci:start": "NODE_ENV=test yarn start",
 		"clean": "rm -rf coverage node_modules .serverless .webpack",
 		"codecov": "cat coverage/lcov.info | codecov",
 		"dynamodb:install": "serverless dynamodb install > /dev/null",
