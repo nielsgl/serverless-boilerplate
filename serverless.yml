@@ -130,6 +130,15 @@ functions:
               - statusCode: '200'
                 responseModels:
                   'application/json': SuccessResponse
+  error400:
+    handler: handler.error400
+    events:
+      - http:
+          method: get
+          path: error
+          cors: true
+          documentation:
+            ${file(src/error400.doc.yml)}
 
   # kms:
   #   handler: handler.kms
