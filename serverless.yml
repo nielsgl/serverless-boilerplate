@@ -16,9 +16,9 @@ provider:
 
   iamRoleStatements:
   - Effect: Allow
-  Action:
-    - dynamodb:*
-  Resource: arn:aws:dynamodb:*:*:table/${self:custom.my_table}
+    Action:
+      - dynamodb:*
+    Resource: arn:aws:dynamodb:*:*:table/${self:custom.my_table}
   # - Effect: Allow
   #   Action:
   #     - KMS:Decrypt
@@ -26,7 +26,7 @@ provider:
 
 
 plugins:
-  - serverless-domain-manager
+  # - serverless-domain-manager
   - serverless-aws-documentation
   - serverless-kms-secrets
   - serverless-jest-plugin
@@ -82,7 +82,7 @@ custom:
   documentation:
     api:
       info:
-        ${file(lib/docs/info.yml)}
+        ${file(docs/info.yml)}
     tags:
       - name: MyTag
         description: This is my tag
@@ -92,7 +92,7 @@ custom:
       - path: '/hello'
         description: 'Joyful greeting by your Serverless Application'
     models:
-      - ${file(lib/docs/models/200SuccessResponse.yml)}
+      ${file(docs/models.yml)}
 
 
 
@@ -105,14 +105,7 @@ functions:
           path: health
           cors: true
           documentation:
-            summary: 'GET /health'
-            tags:
-              - MyTag
-            description: 'Check whether your serverless application is working'
-            methodResponses:
-              - statusCode: '200'
-                responseModels:
-                  'application/json': SuccessResponse
+            ${file(src/health.doc.yml)}
 
   hello:
     handler: handler.hello
@@ -122,14 +115,8 @@ functions:
           path: hello
           cors: true
           documentation:
-            summary: 'GET /hello'
-            tags:
-              - MyTag
-            description: 'Let your serverless application say hello to the world!'
-            methodResponses:
-              - statusCode: '200'
-                responseModels:
-                  'application/json': SuccessResponse
+            ${file(src/hello.doc.yml)}
+
   error400:
     handler: handler.error400
     events:
