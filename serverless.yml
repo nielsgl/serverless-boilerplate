@@ -4,9 +4,10 @@ service:
 provider:
   name: aws
   runtime: nodejs6.10
-  region: us-west-2
-  stage: dev
   cfLogs: true
+  stage: ${opt:stage, file(./config/output.yml):stage}
+  region: ${opt:region, file(./config/output.yml):region}
+
   environment:
     # MY_KMS_SECRET: ${self:custom.kmsSecrets.secrets.foo}
     SERVERLESS_STAGE: ${opt:stage, self:provider.stage}
@@ -17,7 +18,7 @@ provider:
   - Effect: Allow
   Action:
     - dynamodb:*
-  Resource: arn:aws:dynamodb:*:*:table/${self:custom.table_name}
+  Resource: arn:aws:dynamodb:*:*:table/${self:custom.my_table}
   # - Effect: Allow
   #   Action:
   #     - KMS:Decrypt
@@ -25,6 +26,7 @@ provider:
 
 
 plugins:
+  - serverless-domain-manager
   - serverless-aws-documentation
   - serverless-kms-secrets
   - serverless-jest-plugin
@@ -35,11 +37,23 @@ plugins:
 
 
 custom:
-  table_name: ${self:service}-table
+  config: ${file(./config/output.yml)}
+  stage: ${opt:stage, self:custom.config.stage}
+  prefix: ${self:custom.stage}-${self:service}
+  my_table: ${self:custom.config.db.tables.table}-${self:custom.stage}
+
   # preTestCommands:
   #   - bash .tools/startOffline.sh
   # postTestCommands:
   #   - bash .tools/stopOffline.sh
+
+  customDomain:
+    basePath: ${opt:stage, self:custom.stage}
+    domainName: ${self:custom.config.domain.domainName}
+    stage: ${opt:stage, self:custom.stage}
+    # certificateName:
+    # createRoute53Record: true
+
   webpackIncludeModules: true
 
   serverless-jest-plugin:
@@ -57,6 +71,13 @@ custom:
       inMemory: true
       migrate: true
       seed: true
+
+  # customDomain:
+  #   basePath: ${self:custom.stage}
+  #   domainName: boilerplate.foo.com
+  #   stage: ${self:custom.stage}
+  #   certificateName: # default: determined using domain name
+  #   createRoute53Record: true # default: true
 
   documentation:
     api:
@@ -123,7 +144,7 @@ resources:
     serverlessBoilerplateTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: ${self:custom.table_name}
+        TableName: ${self:custom.my_table}
         AttributeDefinitions:
           - AttributeName: email
             AttributeType: S
