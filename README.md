@@ -97,8 +97,23 @@ plugins:
 
 An admin interface for DynamoDB can be started with `yarn dynamodb:admin`, and will be available on `http://localhost:8001`.
 
+### Custom Domain Name
 
-## Contents
+Using the `serverless-domain-manager` plugin you can easily map your serverless application to a particular domain name.
+To create the custom domain:
+```shell
+serverless create_domain
+```
+To deploy with the custom domain:
+```shell
+severless deploy
+```
+To remove the created custom domain:
+```shell
+serverless delete_domain
+```
+
+## Boilerplate Contents
 
 This boilerplate contains the following plugins:
 
@@ -108,6 +123,7 @@ This boilerplate contains the following plugins:
 - [Serverless Jest Plugin](https://github.com/SC5/serverless-jest-plugin): plugin to enable test driven development using jest, and adding functionality to create functions and tests from command line
 - [Serverless AWS Documentation](https://github.com/9cookies/serverless-aws-documentation): Plugin that adds support for AWS API Gateway documentation and models (e.g. to export a Swagger JSON file with input/output definitions and full text documentation for API documentation).
 - [Serverless DynamoDB Local](https://github.com/99xt/serverless-dynamodb-local): Allows to run dynamodb locally for serverless.
+- [Serverless Domain Manager](https://github.com/amplify-education/serverless-domain-manager): Create custom domain names that your lambda can deploy to with serverless. Allows for base path mapping when deploying and deletion of domain names.
 
 - file `serverless.yml.json`: Register plugins above
 - file `webpack.config.js`: Settings for webpack-plugin
@@ -127,6 +143,7 @@ This boilerplate contains the following plugins:
 ### In Progress:
 
 - Test framework (jest)
+- Domain Name Manager
 
 ### Done:
 
