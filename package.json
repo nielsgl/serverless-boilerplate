@@ -27,6 +27,7 @@
 	},
 	"main": "handler.js",
 	"scripts": {
+		"ci:start": "NODE_ENV=test yarn start",
 		"clean": "rm -rf coverage node_modules .serverless .webpack",
 		"codecov": "cat coverage/lcov.info | codecov",
 		"dynamodb:install": "serverless dynamodb install > /dev/null",
@@ -36,6 +37,7 @@
 		"nsp": "nsp check",
 		"prepush": "yarn lint; yarn test",
 		"postinstall": "",
+		"prestart": "node lib/scripts/prestart.js",
 		"start": "serverless offline start",
 		"release": "release-it",
 		"test": "jest --config jest.config.json",
@@ -72,6 +74,7 @@
 		"release-it": "^3.1.1",
 		"run-sequence": "^2.2.0",
 		"serverless-aws-documentation": "^0.8.0",
+		"serverless-domain-manager": "^1.1.14",
 		"serverless-dynamodb-local": "^0.2.25",
 		"serverless-jest-plugin": "^0.1.6",
 		"serverless-kms-secrets": "^1.0.2",

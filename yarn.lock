@@ -308,7 +308,7 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
-aws-sdk@^2.133.0, aws-sdk@^2.7.0, aws-sdk@^2.7.10, aws-sdk@^2.7.27, aws-sdk@^2.72.0:
+aws-sdk@^2.133.0, aws-sdk@^2.2.33, aws-sdk@^2.7.0, aws-sdk@^2.7.10, aws-sdk@^2.7.27, aws-sdk@^2.72.0:
   version "2.133.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.133.0.tgz#6a6d8988bd35928c11bbd3db677ad5b3eae7107a"
   dependencies:
@@ -1204,7 +1204,7 @@ chai@^4.0.2:
     pathval "^1.0.0"
     type-detect "^4.0.0"
 
-chalk@2.1.0, chalk@^2.0.0, chalk@^2.1.0:
+chalk@2.1.0, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.1.0.tgz#ac5becf14fa21b99c6c92ca7a7d7cfd5b17e743e"
   dependencies:
@@ -5535,6 +5535,13 @@ serverless-aws-documentation@^0.8.0:
   resolved "https://registry.yarnpkg.com/serverless-aws-documentation/-/serverless-aws-documentation-0.8.0.tgz#9ee9a626ca2f78cf5a4ae5529bca331b10cb2917"
   dependencies:
     object-hash "^1.1.7"
+
+serverless-domain-manager@^1.1.14:
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/serverless-domain-manager/-/serverless-domain-manager-1.1.14.tgz#e72fe3dd83166ebf063559536ceff27a41d53d72"
+  dependencies:
+    aws-sdk "^2.2.33"
+    chalk "^2.0.1"
 
 serverless-dynamodb-local@^0.2.25:
   version "0.2.25"

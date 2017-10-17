@@ -4,9 +4,10 @@ service:
 provider:
   name: aws
   runtime: nodejs6.10
-  region: us-west-2
-  stage: dev
   cfLogs: true
+  stage: ${opt:stage, file(./config/output.yml):stage}
+  region: ${opt:region, file(./config/output.yml):region}
+
   environment:
     # MY_KMS_SECRET: ${self:custom.kmsSecrets.secrets.foo}
     SERVERLESS_STAGE: ${opt:stage, self:provider.stage}
@@ -15,9 +16,9 @@ provider:
 
   iamRoleStatements:
   - Effect: Allow
-  Action:
-    - dynamodb:*
-  Resource: arn:aws:dynamodb:*:*:table/${self:custom.table_name}
+    Action:
+      - dynamodb:*
+    Resource: arn:aws:dynamodb:*:*:table/${self:custom.my_table}
   # - Effect: Allow
   #   Action:
   #     - KMS:Decrypt
@@ -25,6 +26,7 @@ provider:
 
 
 plugins:
+  # - serverless-domain-manager
   - serverless-aws-documentation
   - serverless-kms-secrets
   - serverless-jest-plugin
@@ -35,11 +37,23 @@ plugins:
 
 
 custom:
-  table_name: ${self:service}-table
+  config: ${file(./config/output.yml)}
+  stage: ${opt:stage, self:custom.config.stage}
+  prefix: ${self:custom.stage}-${self:service}
+  my_table: ${self:custom.config.db.tables.table}-${self:custom.stage}
+
   # preTestCommands:
   #   - bash .tools/startOffline.sh
   # postTestCommands:
   #   - bash .tools/stopOffline.sh
+
+  customDomain:
+    basePath: ${opt:stage, self:custom.stage}
+    domainName: ${self:custom.config.domain.domainName}
+    stage: ${opt:stage, self:custom.stage}
+    # certificateName:
+    # createRoute53Record: true
+
   webpackIncludeModules: true
 
   serverless-jest-plugin:
@@ -58,10 +72,17 @@ custom:
       migrate: true
       seed: true
 
+  # customDomain:
+  #   basePath: ${self:custom.stage}
+  #   domainName: boilerplate.foo.com
+  #   stage: ${self:custom.stage}
+  #   certificateName: # default: determined using domain name
+  #   createRoute53Record: true # default: true
+
   documentation:
     api:
       info:
-        ${file(lib/docs/info.yml)}
+        ${file(docs/info.yml)}
     tags:
       - name: MyTag
         description: This is my tag
@@ -71,7 +92,7 @@ custom:
       - path: '/hello'
         description: 'Joyful greeting by your Serverless Application'
     models:
-      - ${file(lib/docs/models/200SuccessResponse.yml)}
+      ${file(docs/models.yml)}
 
 
 
@@ -84,14 +105,7 @@ functions:
           path: health
           cors: true
           documentation:
-            summary: 'GET /health'
-            tags:
-              - MyTag
-            description: 'Check whether your serverless application is working'
-            methodResponses:
-              - statusCode: '200'
-                responseModels:
-                  'application/json': SuccessResponse
+            ${file(src/health.doc.yml)}
 
   hello:
     handler: handler.hello
@@ -101,14 +115,17 @@ functions:
           path: hello
           cors: true
           documentation:
-            summary: 'GET /hello'
-            tags:
-              - MyTag
-            description: 'Let your serverless application say hello to the world!'
-            methodResponses:
-              - statusCode: '200'
-                responseModels:
-                  'application/json': SuccessResponse
+            ${file(src/hello.doc.yml)}
+
+  error400:
+    handler: handler.error400
+    events:
+      - http:
+          method: get
+          path: error
+          cors: true
+          documentation:
+            ${file(src/error400.doc.yml)}
 
   # kms:
   #   handler: handler.kms
@@ -123,7 +140,7 @@ resources:
     serverlessBoilerplateTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: ${self:custom.table_name}
+        TableName: ${self:custom.my_table}
         AttributeDefinitions:
           - AttributeName: email
             AttributeType: S

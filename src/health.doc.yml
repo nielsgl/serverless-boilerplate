@@ -1,0 +1,8 @@
+summary: 'GET /health'
+tags:
+  - MyTag
+description: 'Check whether your serverless application is working'
+methodResponses:
+  - statusCode: '200'
+    responseModels:
+      'application/json': SuccessResponse

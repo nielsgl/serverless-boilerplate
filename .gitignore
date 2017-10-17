@@ -65,5 +65,8 @@ kms-secrets*.yml
 # Webpack directories
 .webpack
 
+# Generated config file
+config/output.yml
+
 # Generated documentation
 docs/swagger.*

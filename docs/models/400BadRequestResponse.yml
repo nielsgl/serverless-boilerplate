@@ -1,0 +1,12 @@
+name: BadRequestResponse
+description: 'The endpoint returns a 400 status'
+contentType: 'application/json'
+schema:
+  type: object
+  properties:
+    statusCode:
+      type: number
+    error:
+      type: string
+    message:
+      type: string

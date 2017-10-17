@@ -1,0 +1,2 @@
+- ${file(docs/models/200SuccessResponse.yml)}
+- ${file(docs/models/400BadRequestResponse.yml)}
