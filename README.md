@@ -124,6 +124,7 @@ This boilerplate contains the following plugins:
 - [Serverless AWS Documentation](https://github.com/9cookies/serverless-aws-documentation): Plugin that adds support for AWS API Gateway documentation and models (e.g. to export a Swagger JSON file with input/output definitions and full text documentation for API documentation).
 - [Serverless DynamoDB Local](https://github.com/99xt/serverless-dynamodb-local): Allows to run dynamodb locally for serverless.
 - [Serverless Domain Manager](https://github.com/amplify-education/serverless-domain-manager): Create custom domain names that your lambda can deploy to with serverless. Allows for base path mapping when deploying and deletion of domain names.
+- [Serverless VPC Discovery](https://github.com/amplify-education/serverless-vpc-discovery): The vpc discovery plugin takes the given vpc, subnet, and security group names in the serverless file to setup the vpc configuration for the lambda.
 
 - file `serverless.yml.json`: Register plugins above
 - file `webpack.config.js`: Settings for webpack-plugin
@@ -155,6 +156,7 @@ This boilerplate contains the following plugins:
 - ~~Coverage check with Codecov~~
 - ~~DynamoDB and Dynalite~~
 - ~~Domain Name Manager~~
+- ~~VPC Discovery~~
 
 ## Notes
 
