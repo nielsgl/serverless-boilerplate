@@ -2163,6 +2163,18 @@ execa@^0.7.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
+execa@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-0.8.0.tgz#d8d76bbc1b55217ed190fd6dd49d3c774ecfc8da"
+  dependencies:
+    cross-spawn "^5.0.1"
+    get-stream "^3.0.0"
+    is-stream "^1.1.0"
+    npm-run-path "^2.0.0"
+    p-finally "^1.0.0"
+    signal-exit "^3.0.0"
+    strip-eof "^1.0.0"
+
 expand-brackets@^0.1.4:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-0.1.5.tgz#df07284e342a807cd733ac5af72411e581d1177b"
@@ -3013,6 +3025,16 @@ https-proxy-agent@^1.0.0:
     debug "2"
     extend "3"
 
+husky@^0.15.0-beta.10:
+  version "0.15.0-beta.10"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-0.15.0-beta.10.tgz#28a9588794a594b0da3eac7d40a90123b19b91af"
+  dependencies:
+    execa "^0.8.0"
+    is-ci "^1.0.10"
+    pkg-dir "^2.0.0"
+    read-pkg "^2.0.0"
+    run-node "^0.1.1"
+
 iconv-lite@0.4.13:
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
@@ -3136,7 +3158,7 @@ is-builtin-module@^1.0.0:
   dependencies:
     builtin-modules "^1.0.0"
 
-is-ci@^1.0.9:
+is-ci@^1.0.10, is-ci@^1.0.9:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/is-ci/-/is-ci-1.0.10.tgz#f739336b2632365061a9d48270cd56ae3369318e"
   dependencies:
@@ -5442,6 +5464,10 @@ run-async@^2.2.0:
   dependencies:
     is-promise "^2.1.0"
 
+run-node@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/run-node/-/run-node-0.1.1.tgz#182ee9acd9a3b7ac5e6cf7679d5c33a1360c7b6f"
+
 run-sequence@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/run-sequence/-/run-sequence-2.2.0.tgz#b3f8d42836db89d08b2fe704eaf0c93dfd8335e2"
@@ -5590,6 +5616,13 @@ serverless-offline@^3.16.0:
     jsonwebtoken "^7.4.3"
     lodash "^4.17.4"
     velocityjs "^0.9.3"
+
+serverless-vpc-discovery@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/serverless-vpc-discovery/-/serverless-vpc-discovery-1.0.11.tgz#638053f681faaed6990a32387786dfcd60a68ef5"
+  dependencies:
+    aws-sdk "^2.2.33"
+    underscore "^1.8.3"
 
 serverless-webpack@^3.1.2:
   version "3.1.2"
@@ -6191,6 +6224,10 @@ uid-number@^0.0.6:
 unc-path-regex@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/unc-path-regex/-/unc-path-regex-0.1.2.tgz#e73dd3d7b0d7c5ed86fbac6b0ae7d8c6a69d50fa"
+
+underscore@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
 
 unique-stream@^1.0.0:
   version "1.0.0"
