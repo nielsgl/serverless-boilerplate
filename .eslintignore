@@ -2,3 +2,4 @@
 .webpack
 coverage
 node_modules
+!.serverless_plugins
