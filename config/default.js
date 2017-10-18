@@ -5,6 +5,7 @@ module.exports = {
 
 	stage: '',
 	region: 'us-west-2',
+	vpc_env: '',
 
 	domain: {
 		basePath: '',
