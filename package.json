@@ -52,7 +52,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "yarn lint",
+			"pre-commit": "",
 			"pre-push": "yarn lint"
 		}
 	},
@@ -95,6 +95,7 @@
 		"babel-runtime": "^6.26.0",
 		"boom": "^6.0.0",
 		"config": "^1.26.2",
-		"debug": "^3.1.0"
+		"debug": "^3.1.0",
+		"serverless-vpc-discovery": "^1.0.11"
 	}
 }
