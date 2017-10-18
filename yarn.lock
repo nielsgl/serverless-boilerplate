@@ -5617,6 +5617,13 @@ serverless-offline@^3.16.0:
     lodash "^4.17.4"
     velocityjs "^0.9.3"
 
+serverless-vpc-discovery@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/serverless-vpc-discovery/-/serverless-vpc-discovery-1.0.11.tgz#638053f681faaed6990a32387786dfcd60a68ef5"
+  dependencies:
+    aws-sdk "^2.2.33"
+    underscore "^1.8.3"
+
 serverless-webpack@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-3.1.2.tgz#f1ee61649414e141a1659cdce0ad6294a414d470"
@@ -6217,6 +6224,10 @@ uid-number@^0.0.6:
 unc-path-regex@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/unc-path-regex/-/unc-path-regex-0.1.2.tgz#e73dd3d7b0d7c5ed86fbac6b0ae7d8c6a69d50fa"
+
+underscore@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
 
 unique-stream@^1.0.0:
   version "1.0.0"
