@@ -35,8 +35,8 @@
 		"lint": "eslint .",
 		"lint:watch": "gulp",
 		"nsp": "nsp check",
-		"precommit": "yarn lint",
-		"prepush": "yarn lint; yarn test",
+		"xxprecommit": "yarn lint",
+		"xxprepush": "yarn lint; yarn test",
 		"postinstall": "",
 		"prestart": "node lib/scripts/prestart.js",
 		"start": "serverless offline start",
@@ -49,6 +49,11 @@
 	},
 	"jest-junit": {
 		"output": "./coverage/junit.xml"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn lint"
+		}
 	},
 	"devDependencies": {
 		"aws-sdk": "^2.133.0",
