@@ -10,7 +10,9 @@ module.exports = {
 	module: {
 		rules: [{
 			test: /\.js$/,
-			loaders: ['babel-loader'],
+			use: [{
+				loader: 'babel-loader',
+			}],
 			include: __dirname,
 			exclude: /node_modules/,
 		}],
@@ -28,4 +30,5 @@ module.exports = {
 		path: path.join(__dirname, '.webpack'),
 		filename: '[name].js',
 	},
+	stats: 'minimal'
 };
