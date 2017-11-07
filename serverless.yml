@@ -19,13 +19,25 @@ provider:
     Action:
       - dynamodb:*
     Resource: arn:aws:dynamodb:*:*:table/${self:custom.my_table}
+
+
+
+  # # Enable the following IAM permissions for using KMS
   # - Effect: Allow
   #   Action:
   #     - KMS:Decrypt
   #   Resource: ${self:custom.kmsSecrets.keyArn}
 
+  # Enable the following IAM permissions for using VPC Discovery
+  # - Effect: Allow
+  #   Action:
+  #     - ec2:CreateNetworkInterface
+  #     - ec2:DescribeNetworkInterfaces
+  #     - ec2:DeleteNetworkInterfaces
+
 
 plugins:
+  # - serverless-vpc-discovery
   # - serverless-domain-manager
   - serverless-aws-documentation
   - serverless-kms-secrets
@@ -39,6 +51,7 @@ plugins:
 custom:
   config: ${file(./config/output.yml)}
   stage: ${opt:stage, self:custom.config.stage}
+  vpc_env: ${opt:vpc_env, self:custom.config.vpc_env}
   prefix: ${self:custom.stage}-${self:service}
   my_table: ${self:custom.config.db.tables.table}-${self:custom.stage}
 
@@ -47,23 +60,33 @@ custom:
   # postTestCommands:
   #   - bash .tools/stopOffline.sh
 
-  customDomain:
-    basePath: ${opt:stage, self:custom.stage}
-    domainName: ${self:custom.config.domain.domainName}
-    stage: ${opt:stage, self:custom.stage}
-    # certificateName:
-    # createRoute53Record: true
-
   webpackIncludeModules: true
 
   serverless-jest-plugin:
     functionTemplate: config/templates/function-template.ejs
     testTemplate: config/templates/test-template.ejs
 
-  serverless-kms-secrets:
-    secretsFile:
-    # secretsFile: kms2-secrets.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml # (optional)
+  # # For the serverless-kms-secrets plugin
+  # serverless-kms-secrets:
+  #   secretsFile:
+  #   secretsFile: kms2-secrets.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml # (optional)
   # kmsSecrets: ${file(kms-secrets2.${opt:stage, self:provider.stage}.${opt:region, self:provider.region}.yml)}
+
+  # # For the serverless-domain-manager plugin
+  # customDomain:
+  #   basePath: ${opt:stage, self:custom.stage}
+  #   domainName: ${self:custom.config.domain.domainName}
+  #   stage: ${opt:stage, self:custom.stage}
+  #   # certificateName:
+  #   # createRoute53Record: true
+
+  # For the serverless-vpc-discovery plugin
+  # vpc:
+  #   vpcName: '${self:custom.stage}'
+  #   subnetNames:
+  #     - '${self:custom.stage}_NAME_OF_SUBNET'
+  #   securityGroupNames:
+  #     - '${self:custom.stage}_NAME_OF_SECURITY_GROUP'
 
   dynamodb:
     start:
