@@ -88,7 +88,7 @@ This plugin can be found in the `.serverless_plugins` directory in the root of t
 
 ```yaml
 plugins:
-  - serverless-dynalite
+  - dynalite
   - serverless-webpack
   - serverless-offline
 ```
